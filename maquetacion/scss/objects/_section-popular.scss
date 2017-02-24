@@ -1,0 +1,31 @@
+/*------------------------------------*\
+$SECTION POPULAR
+\*------------------------------------*/
+.section-popular {
+    @include respond-to(tablet) {
+        width: 232px;
+    }
+    @include respond-to(desktop) {
+        width: 396px;
+    }
+    &.content--full {
+        @include respond-to(tablet) {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-flow: row wrap;
+        }
+        @include respond-to(desktop) {
+            width: 100%;
+        }
+        h2 {
+            width: 100%;
+        }
+        .item {
+            @include respond-to(tablet) {
+                width: calc(33.333% - 7px);
+            }
+        }
+    }
+}

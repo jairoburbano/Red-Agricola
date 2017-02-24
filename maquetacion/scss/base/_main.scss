@@ -1,0 +1,448 @@
+/*------------------------------------*\
+$MAIN
+\*------------------------------------*/
+html, body {
+    height: 100%;
+}
+body {
+    @extend .noto;
+    font-weight: 400;
+    color: $principal;
+}
+@include sticky(411px, page-wrap, footer);
+@include respond-to(tablet) {
+    @include sticky(335px, page-wrap, footer);
+}
+h1, h2, h3, h4, h5 {
+    @extend .roboto;
+    font-weight: 700;
+}
+h1 {
+    @include font-size(20px, 22px);
+    @include respond-to(desktop) {
+        @include font-size(28px, 32px);
+    }
+}
+h2 {
+    @include font-size(18px, 22px);
+    @include respond-to(desktop) {
+        @include font-size(24px, 28px);
+    }
+}
+h3 {
+    @include font-size(17px, 21px);
+    @include respond-to(desktop) {
+        @include font-size(21px, 25px);
+    }
+}
+h4 {
+    @include font-size(16px, 21px);
+    @include respond-to(desktop) {
+        @include font-size(19px, 22px);
+    }
+}
+h5 {
+    @include font-size(16px, 21px);
+    @include respond-to(desktop) {
+        @include font-size(19px, 22px);
+    }
+}
+h6 {
+    @include font-size(15px, 21px);
+    font-weight: 700;
+    @include respond-to(desktop) {
+        @include font-size(18px, 26px);
+    }
+}
+.section__title {
+    width: 100%;
+    @include font-size(28px, 30px);
+    text-transform: none;
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    @extend .noto;
+    margin-bottom: 20px;
+    &.sidebar__title, &.title__small {
+        @include font-size(24px, 28px);
+        @include respond-to(desktop) {
+            @include font-size(36px, 38px);
+        }
+    }
+    @include respond-to(desktop) {
+        @include font-size(48px, 50px);
+    }
+    svg {
+        width: 18px;
+        height: 18px;
+        fill: $main;
+        margin-right: 10px;
+        @include respond-to(desktop) {
+            width: 32px;
+            height: 32px;
+        }
+        .section--video &, .page-format-video &, .page-template-template-redagricola-tv & {
+            fill: $video;
+        }
+        .section--evento &, .page-type-evento &, .single-evento &, .page-template-template-eventos & {
+            fill: $evento;
+        }
+        .section--papel &, .page-template-template-papel-digital & {
+            fill: $secundario;
+        }
+        .section--columna &, .page-format-columna & {
+            fill: $columna;
+        }
+        .page-type-brand &, .page-template-template-360 &, .page-template-template-portadilla-cliente & {
+            fill: $brand;
+        }
+        .section--premium &, .page-type-premium & {
+            fill: $secundario;
+        }
+    }
+}
+.content, .user--inactive {
+    h2, h3, h4, h5, h6 {
+        margin-bottom: 15px;
+        @include respond-to(desktop) {
+            margin-bottom: 20px;
+        }
+    }
+    p {
+        @include font-size(15px, 21px);
+        color: $principal;
+        margin-bottom: 20px;
+        @include respond-to(desktop) {
+            @include font-size(18px, 26px);
+            margin-bottom: 24px;
+        }
+        &.bajada {
+            @include font-size(18px, 24px);
+            color: $darkgray;
+            margin-bottom: 10px;
+            @include respond-to(desktop) {
+                @include font-size(24px, 30px);
+                margin-bottom: 24px;
+            }
+        }
+    }
+    blockquote {
+        position: relative;
+        padding: 20px 10px;
+        text-align: center;
+        display: block;
+        font-style: italic;
+        @include font-size(16px, 22px);
+        color: $darkgray;
+        margin-bottom: 30px;
+        clear: both;
+        @include respond-to(desktop) {
+            @include font-size(21px, 30px);
+        }
+        .page-format-video & {
+            &::after {
+                background: $video;
+            }
+        }
+        .page-type-evento &, .single-evento & {
+            &::after {
+                background: $evento;
+            }
+        }
+        .page-template-template-papel-digital & {
+            &::after {
+                background: $secundario;
+            }
+        }
+        .page-format-columna & {
+            &::after {
+                background: $columna;
+            }
+        }
+        .page-type-brand &, .page-template-template-360 & {
+            &::after {
+                background: $brand;
+            }
+        }
+        .page-type-premium & {
+            &::after {
+                background: $secundario;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 0);
+            width: 80px;
+            height: 2px;
+            background: $main;
+            @include respond-to(desktop) {
+                width: 160px;
+            }
+        }
+        svg {
+            width: 54px;
+            height: 39px;
+            fill: $lightgray;
+            position: absolute;
+            z-index: -1;
+            &:first-of-type {
+                top: 0;
+                left: 0;
+            }
+            &:last-of-type {
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+    a {
+        color: $principal;
+        border-bottom: 2px solid $main;
+        &.btn {
+            color: white;
+            border-bottom: 0;
+            .no-touch & {
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+        .no-touch & {
+            &:hover {
+                color: $main;
+                .section--video &, .page-format-video & {
+                    color: $video;
+                }
+                .section--evento &, .page-type-evento &, .single-evento & {
+                    color: $evento;
+                }
+                .section--papel &, .page-template-template-papel-digital & {
+                    color: $secundario;
+                }
+                .section--columna &, .page-format-columna & {
+                    color: $columna;
+                }
+                .page-type-brand &, .page-template-template-360 & {
+                    color: $brand;
+                }
+                .section--premium &, .page-type-premium & {
+                    color: $secundario;
+                }
+            }
+        }
+    }
+    .bloque {
+        background: $main;
+        width: calc(100% + 40px);
+        margin-left: -20px;
+        padding: 20px;
+        margin-bottom: 30px;
+        .page-format-video & {
+            background: $video;
+        }
+        .page-type-evento &, .single-evento & {
+            background: $evento;
+        }
+        .page-template-template-papel-digital & {
+            background: $secundario;
+        }
+        .page-format-columna & {
+            background: $columna;
+        }
+        .page-type-brand & {
+            background: $brand;
+        }
+        .page-type-premium & {
+            background: $secundario;
+        }
+        @include respond-to(tablet) {
+            width: 50%;
+            margin-left: 0;
+            margin-bottom: 15px;
+            &.bloque--left {
+                float: left;
+                margin-right: 15px;
+            }
+            &.bloque--right {
+                float: right;
+                margin-left: 15px;
+            }
+        }
+        p, a, h1, h2, h3, h4, h5, h6, li {
+            color: white;
+        }
+        .page-format-video & {
+            background: $video;
+        }
+        .page-format-quote & {
+            background: $video;
+        }
+        .page-format-evento & {
+            background: $video;
+        }
+    }
+    ul {
+        li {
+            padding-left: 15px;
+            position: relative;
+            @include font-size(15px, 21px);
+            margin-bottom: 6px;
+            @include respond-to(desktop) {
+                @include font-size(18px, 26px);
+            }
+            &::before {
+                content: '';
+                width: 6px;
+                height: 6px;
+                position: absolute;
+                left: 0;
+                top: 8.5px;
+                background: $main;
+                .section--video &, .page-format-video & {
+                    background: $video;
+                }
+                .section--evento &, .page-type-evento &, .single-evento & {
+                    background: $evento;
+                }
+                .section--papel &, .page-template-template-papel-digital & {
+                    background: $secundario;
+                }
+                .section--columna &, .page-format-columna & {
+                    background: $columna;
+                }
+                .page-type-brand &, .page-template-template-360 & {
+                    background: $brand;
+                }
+                .section--premium &, .page-type-premium & {
+                    background: $secundario;
+                }
+            }
+        }
+    }
+    ol {
+        counter-reset: numbers;
+        li {
+            padding-left: 20px;
+            position: relative;
+            @include font-size(15px, 21px);
+            margin-bottom: 6px;
+            @include respond-to(desktop) {
+                @include font-size(18px, 26px);
+            }
+            &::before {
+                counter-increment: numbers;
+                content: counter(numbers) '.';
+                width: 6px;
+                position: absolute;
+                left: 0;
+                top: 0px;
+                color: $main;
+                .section--video &, .page-format-video & {
+                    color: $video;
+                }
+                .section--evento &, .page-type-evento &, .single-evento & {
+                    color: $evento;
+                }
+                .section--papel &, .page-template-template-papel-digital & {
+                    color: $secundario;
+                }
+                .section--columna &, .page-format-columna & {
+                    color: $columna;
+                }
+                .page-type-brand &, .page-template-template-360 & {
+                    color: $brand;
+                }
+                .section--premium &, .page-type-premium & {
+                    color: $secundario;
+                }
+            }
+        }
+    }
+    .wp-caption {
+        width: 100% !important;
+        img {
+            width: 100% !important;
+            height: auto !important;
+        }
+        .wp-caption-text {
+            font-size: 0.9rem;
+            line-height: 1.2rem;
+        }
+    }
+}
+a, input, button, select, textarea {
+    &:focus {
+        outline: 0;
+    }
+}
+select::-ms-expand {
+    display: none;
+}
+select {
+    box-sizing: content-box;
+    display: block;
+}
+a {
+    .no-touch & {
+        transition: all $time;
+    }
+}
+input, select, textarea {
+    border-radius: 0;
+    border: 0;
+    background-color: transparent;
+}
+img {
+    max-width: 100%;
+}
+.container--flex {
+    @include respond-to(tablet) {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+}
+.alignright, a .alignright {
+    float: right;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+.alignleft, a .alignleft {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+.aligncenter, a .aligncenter {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1em;
+}
+.page-template-default {
+    padding-bottom: 30px;
+    @include respond-to(tablet) {
+        padding-bottom: 0;
+    }
+}
+.user--inactive {
+    padding: 20px 0 5px;
+    margin: 20px 0;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    .single-papel-digital & {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(255,255,255,.8);
+        width: 90%;
+        padding: 20px;
+    }
+}

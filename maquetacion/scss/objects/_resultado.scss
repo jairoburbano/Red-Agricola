@@ -1,0 +1,13 @@
+/*------------------------------------*\
+    		$RESULTADO
+\*------------------------------------*/
+.wrap--resultado {
+    .section__title {
+        margin-bottom: 10px;
+    }
+    .result--bajada {
+        margin-bottom: 15px;
+        @include font-size(21px, 28px);
+        font-weight: 700;
+    }
+}

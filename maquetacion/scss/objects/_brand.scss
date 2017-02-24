@@ -1,0 +1,153 @@
+/*------------------------------------*\
+$BRAND
+\*------------------------------------*/
+.container--brand {
+    border-bottom: 1px solid $gray;
+    margin-bottom: 30px;
+    @include respond-to(tablet) {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-flow: row wrap;
+    }
+    @include respond-to(desktop) {
+        padding: 0 100px;
+    }
+}
+.brand {
+    border: 1px solid $gray;
+    padding: 10px 10px 20px;
+    margin-bottom: 20px;
+    @include respond-to(tablet) {
+        width: 280px;
+    }
+}
+.brand__logo {
+    max-width: 260px;
+    width: 100%;
+    max-height: 90px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    img {
+        object-fit: contain;
+    }
+}
+.brand__redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    margin-top: 20px;
+    a {
+        width: 24px;
+        height: 24px;
+        margin: 0 5px;
+        display: block;
+    }
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+    .brand--facebook {
+        svg {
+            fill: #3a5997;
+        }
+    }
+    .brand--twitter {
+        svg {
+            fill: #1d9bea;
+        }
+    }
+    .brand--instagram {
+        svg {
+            fill: #cc2e90;
+        }
+    }
+    .brand--linkedin {
+        svg {
+            fill: #0076b5;
+        }
+    }
+}
+.brand__title {
+    @include font-size(28px, 30px);
+    @extend .noto;
+    font-weight: 700;
+    text-transform: none;
+    margin-bottom: 10px;
+    @include respond-to(desktop) {
+        @include font-size(48px, 50px);
+    }
+    span {
+        color: $brand;
+    }
+}
+.brand__ask {
+    font-weight: 700;
+    @include font-size(13px, 15px);
+    margin-bottom: 10px;
+    display: block;
+    color: $principal;
+    .no-touch & {
+        transition: all $time;
+        &:hover {
+            color: $brand;
+        }
+    }
+}
+.brand__content {
+    @include respond-to(tablet) {
+        width: calc(100% - 280px);
+        padding-left: 30px;
+    }
+}
+.columna--brand {
+    @include respond-to(tablet) {
+        width: 100%;
+        padding: 0;
+    }
+    .item {
+        margin-bottom: 20px;
+        @include respond-to(tablet) {
+            width: 100%;
+            top: 0;
+        }
+    }
+    .section__title {
+        margin-bottom: 20px;
+    }
+}
+.page-type-brand {
+    .item {
+        &::after {
+            background: $brand;
+        }
+        .item__media {
+            .no-touch & {
+                &:hover {
+                    background: $brand;
+                }
+            }
+        }
+        .item__by a {
+            .no-touch & {
+                &:hover {
+                    color: $brand;
+                }
+            }
+        }
+        .item__title a {
+            .no-touch & {
+                &:hover {
+                    color: $brand;
+                }
+            }
+        }
+    }
+    .columnista {
+        &::after {
+            background: $brand;
+        }
+    }
+}

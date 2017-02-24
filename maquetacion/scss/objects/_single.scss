@@ -1,0 +1,19 @@
+/*------------------------------------*\
+    		$SINGLE
+\*------------------------------------*/
+.container--single {
+    @include respond-to(tablet) {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-flow: row wrap;
+    }
+}
+.contenido {
+    @include respond-to(tablet) {
+        width: 480px;
+    }
+    @include respond-to(desktop) {
+        width: 790px;
+    }
+}

@@ -1,0 +1,19 @@
+.wrap {
+	margin: auto;
+	max-width: cr(1240px);
+    padding: 0 20px;
+    width: 100%;
+    @include respond-to(tablet) {
+        position: relative;
+    }
+    @include respond-to(desktop) {
+    }
+}
+.wrap--flex {
+    @include respond-to(tablet) {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-flow: row wrap;
+    }
+}

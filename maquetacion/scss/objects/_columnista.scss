@@ -1,0 +1,64 @@
+/*------------------------------------*\
+$COLUMNISTA
+\*------------------------------------*/
+.columnista {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 80px;
+        height: 2px;
+        background: $columna;
+    }
+    .content {
+        margin-top: 15px;
+        width: 100%;
+    }
+}
+.columnista__media {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    @include respond-to(desktop) {
+        width: 120px;
+        height: 120px;
+    }
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.columnista__content {
+    width: calc(100% - 64px);
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: row wrap;
+    @include respond-to(desktop) {
+        width: calc(100% - 120px);
+    }
+    p {
+        @include font-size(13px, 25px);
+    }
+}
+.columnista__title {
+    width: 100%;
+    @extend .noto;
+    @include font-size(24px, 28px);
+    text-transform: none;
+    @include respond-to(desktop) {
+        @include font-size(36px, 38px);
+    }
+}

@@ -1,0 +1,53 @@
+/*------------------------------------*\
+$EVENTOS
+\*------------------------------------*/
+.content--box--evento {
+    display: flex;
+    flex-flow: column-reverse;
+    @include respond-to(tablet) {
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+.container--eventos {
+    @include respond-to(tablet) {
+        width: calc(100% - 280px);
+        padding-left: 25px;
+    }
+    .item {
+        width: 100%;
+    }
+}
+.form__evento, .form__informacion {
+    border-top: 1px solid $gray;
+    .form--container {
+        max-width: 382px;
+        margin: auto;
+        padding: 30px 0;
+        @include respond-to(desktop) {
+            padding-bottom: 40px;
+        }
+    }
+}
+.container--evento {
+    @include respond-to(tablet) {
+        width: 100%;
+    }
+    @include respond-to(desktop) {
+        width: calc(100% - 384px);
+        padding-right: 24px;
+    }
+}
+.form__evento {
+    .factura--box {
+        width: 100%;
+        margin: 30px 0;
+        padding-top: 30px;
+        border-top: 1px solid #d2d2d2;
+    }
+    #tipo-pago, .input-radio {
+        width: 100%;
+    }
+}

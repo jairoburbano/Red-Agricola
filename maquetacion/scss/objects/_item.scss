@@ -1,0 +1,326 @@
+/*------------------------------------*\
+$ITEM
+\*------------------------------------*/
+.item--dest {
+    width: 100%;
+}
+.item {
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+    .container--single & {
+        margin-bottom: 10px;
+        @include respond-to(desktop) {
+            margin-bottom: 30px;
+        }
+    }
+    .no-touch & {
+        &:hover {
+            &::after {
+                width: 120px;
+            }
+        }
+        &.item--dest:hover {
+            &::after {
+                width: 180px;
+            }
+        }
+        &.item--single--quote:hover {
+            &::after {
+                width: 80px;
+            }
+        }
+    }
+    &.item--dest, .container--single & {
+        @include font-size(20px, 22px);
+        &::after {
+            width: 80px;
+            @include respond-to(desktop) {
+                width: 120px;
+            }
+        }
+        .item__title {
+            @include respond-to(desktop) {
+                @include font-size(28px, 32px);
+            }
+        }
+        .container &, .container--inside & {
+            @include respond-to(tablet) {
+                width: 100%;
+            }
+        }
+    }
+    @include respond-to(tablet) {
+        .container &, .container--inside & {
+            width: calc(50% - 8px);
+        }
+    }
+    @include respond-to(desktop) {
+        &.item--dest {
+            margin-bottom: 40px;
+        }
+    }
+    &::after {
+        content: '';
+        width: 60px;
+        height: 2px;
+        background: $main;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: all $time;
+        @include respond-to(desktop) {
+            width: 80px;
+        }
+        .page-format-video &, .single-format-video & {
+            background: $video;
+        }
+        .page-format-columna &, .single-format-columna & {
+            background: $columna;
+        }
+        .page-type-evento &, .single-evento & {
+            background: $evento;
+        }
+        .page-template-template-papel-digital & {
+            background: $secundario;
+        }
+    }
+}
+.item--hover {
+    .no-touch & {
+        .item__media {
+            img {
+                transform: scale(1.2);
+                opacity: .8;
+            }
+        }
+        .item__title a {
+            color: $main;
+        }
+        &.format-quote {
+            .item__title a {
+                color: $columna;
+            }
+        }
+        &.type-evento {
+            .item__title a {
+                color: $evento;
+            }
+        }
+        &.type-papel {
+            .item__title a {
+                color: $brand;
+            }
+        }
+        &.format-video {
+            .item__title a {
+                color: $video;
+            }
+        }
+    }
+}
+.item__media {
+    margin-bottom: 10px;
+    display: block;
+    transition: all $time;
+    @include respond-to(desktop) {
+        margin-bottom: 15px;
+    }
+    .no-touch & {
+        overflow: hidden;
+        background: $main;
+        position:relative;
+        z-index:1;
+        img {
+            transition: all 500ms;
+            backface-visibility: hidden;
+            width: 100%;
+        }
+        &:hover {
+            img {
+                transform: scale(1.2);
+                opacity: .8;
+            }
+        }
+    }
+}
+.item__meta {
+    @include font-size(13px, 15px);
+    margin-bottom: 10px;
+    span {
+        color: $main;
+        .page-format-video & {
+            color: $video;
+        }
+        .page-type-evento & {
+            color: $evento;
+        }
+        .page-template-template-papel-digital & {
+            color: $secundario;
+        }
+        .page-format-columna & {
+            color: $columna;
+        }
+        .page-type-brand & {
+            color: $brand;
+        }
+        .page-type-premium & {
+            color: $secundario;
+        }
+    }
+    a {
+        color: $principal;
+        font-weight: 700;
+        .no-touch & {
+            &:hover {
+                color: $main;
+            }
+        }
+        .page-format-video & {
+            &:hover {
+                color: $video;
+            }
+        }
+        .page-type-evento & {
+            &:hover {
+                color: $evento;
+            }
+        }
+        .page-template-template-papel-digital & {
+            &:hover {
+                color: $secundario;
+            }
+        }
+        .page-format-columna & {
+            &:hover {
+                color: $columna;
+            }
+        }
+        .page-type-brand & {
+            &:hover {
+                color: $brand;
+            }
+        }
+        .page-type-premium & {
+            &:hover {
+                color: $secundario;
+            }
+        }
+    }
+}
+.epigrafe {
+    font-weight: normal;
+    @include font-size(16px, 18px);
+    color: rgb(64,64,64);
+    margin-bottom: 10px;
+    @extend .roboto;
+    .item--small & {
+        @include font-size(14px, 16px);
+    }
+    .item--medium & {
+        @include font-size(14px, 16px);
+    }
+}
+.item__title {
+    @include font-size(17px, 21px);
+    position: relative;
+    @extend .roboto;
+    font-weight: 700;
+    @include respond-to(desktop) {
+        .item--small & {
+            @include font-size(19px, 22px);
+        }
+        .item--medium & {
+            @include font-size(21px, 25px);
+        }
+    }
+    a {
+        color: $principal;
+        .no-touch & {
+            &:hover {
+                color: $main;
+            }
+        }
+    }
+}
+.item__date {
+    @include font-size(18px, 24px);
+    color: #b2b2b2;
+    margin-bottom: 5px;
+}
+.item__datos {
+    p {
+        position: relative;
+        padding-left: 15px;
+        @include font-size(13px, 16px);
+        &::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 6px;
+            height: 6px;
+            background: $evento;
+        }
+    }
+}
+.item__by {
+    @include font-size(13px, 15px);
+    font-style: italic;
+    a {
+        color: $principal;
+        .no-touch & {
+            &:hover {
+                color: $columna;
+            }
+        }
+    }
+}
+.type-evento {
+    &::after {
+        background: $evento;
+    }
+}
+.item__media--single {
+    margin-bottom: 10px;
+    @include respond-to(desktop) {
+        margin-bottom: 25px;
+    }
+    img {
+        width: 100%;
+    }
+}
+.js-grid {
+    @include respond-to(tablet) {
+        margin: 0 -10px;
+    }
+    .item {
+        @include respond-to(tablet) {
+            width: 50%;
+            padding: 0 10px 10px;
+            &::after {
+                left: 10px;
+            }
+        }
+    }
+}
+.menu--post {
+    .item {
+        &::after {
+            background: $main;
+        }
+    }
+}
+.single--video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -1,0 +1,27 @@
+/*------------------------------------*\
+$PREGUNTAS
+\*------------------------------------*/
+.ask--box {
+    margin-bottom: 26px;
+}
+.ask__title {
+    span {
+        width: calc(100% - 20px);
+        @include font-size(17px, 21px);
+        @extend .roboto;
+        font-weight: 700;
+    }
+    svg {
+        fill: $main;
+    }
+}
+.ask__content {
+    display: none;
+    padding: 20px 0 0;
+    @include respond-to(tablet) {
+        padding: 20px 10px 0;
+    }
+    @include respond-to(desktop) {
+        padding: 20px 20px 0;
+    }
+}

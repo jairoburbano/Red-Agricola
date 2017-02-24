@@ -1,0 +1,26 @@
+/*------------------------------------*\
+$PAPEL
+\*------------------------------------*/
+.page-template-template-papel-digital {
+    .content--box {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-flow: row wrap;
+    }
+    .item {
+        width: calc(50% - 10px);
+        @include less-than(tablet) {
+            &:nth-of-type(2n) {
+                margin-left: 20px;
+            }
+        }
+        @include respond-to(tablet) {
+            width: calc(25% - 12px);
+            margin-right: 16px;
+            &:nth-of-type(4n) {
+                margin-right: 0;
+            }
+        }
+    }
+}

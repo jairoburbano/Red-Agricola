@@ -1,0 +1,131 @@
+/*------------------------------------*\
+$ERROR
+\*------------------------------------*/
+.header-404 {
+    position: relative;
+    z-index: $level3;
+    background: $principal;
+    .wrap {
+        height: 48px;
+        display: flex;
+        align-items: center;
+        flex-flow: row wrap;
+    }
+    a, svg {
+        width: 160px;
+        height: 30px;
+        display: block;
+    }
+}
+.content-404 {
+    height: calc(100vh - 48px);
+    color: white;
+    background: $principal;
+    padding-top: 30px;
+    .content--image {
+        opacity: .6;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        z-index: $level1;
+    }
+    .btn--send {
+        width: 160px;
+        height: 36px;
+        color: white;
+        border-bottom: 0;
+    }
+    .wrap {
+        position: relative;
+        z-index: $level2;
+        @include respond-to(tablet) {
+            width: 480px;
+            @include center;
+            text-align: center;
+            padding: 0;
+        }
+        @include respond-to(desktop) {
+            width: 792px;
+        }
+    }
+    .section--title {
+        @extend .noto;
+        font-weight: 700;
+        @include font-size(28px, 30px);
+        margin-bottom: 15px;
+        width: 100%;
+        text-transform: none;
+        @include respond-to(desktop) {
+            @include font-size(48px, 50px);
+        }
+    }
+    p {
+        @include font-size(18px, 24px);
+        margin-bottom: 30px;
+        color: white;
+        width: 100%;
+        @include respond-to(desktop) {
+            @include font-size(24px, 30px);
+        }
+    }
+}
+.container-404 {
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    flex-flow: column;
+    align-items: center;
+    @include respond-to(tablet) {
+    justify-content: space-between;
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+}
+.formulario-404 {
+    position: relative;
+    margin-bottom: 30px;
+    @include respond-to(tablet) {
+        width: 280px;
+    }
+    .input-group {
+        input {
+            background: white;
+            height: 36px;
+            width: 100%;
+            padding: 0 36px 0 10px;
+            color: $principal;
+        }
+    }
+    .send-group {
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        input {
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: $level2;
+        }
+        svg {
+            width: 14px;
+            height: 14px;
+            fill: $principal;
+            z-index: $level1;
+        }
+    }
+}

@@ -1,0 +1,67 @@
+/*------------------------------------*\
+$ACCORDEON
+\*------------------------------------*/
+.eventos--accordeon, .ask--box {
+    &.active {
+        .icon-line {
+            opacity: 0;
+        }
+    }
+    .icon--line {
+        transition: all $time;
+    }
+}
+.accordeon__title, .ask__title {
+    @include font-size(16px, 21px);
+    @extend .roboto;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 100%;
+    border-bottom: 1px solid $gray;
+    padding: 8px 0;
+    cursor: pointer;
+    svg {
+        width: 14px;
+        fill: $evento;
+    }
+}
+.accordeon__title {
+    span {
+        transition: all $time;
+    }
+    .no-touch & {
+        &:hover {
+            color: $evento;
+        }
+    }
+}
+.accordeon__content, .ask__content {
+    display: none;
+    padding: 20px;
+    dl {
+        @include font-size(15px, 18px);
+        a {
+            color: $principal;
+            .no-touch & {
+                &:hover {
+                    color: $evento;
+                }
+            }
+        }
+    }
+    dt {
+        font-weight: 700;
+        margin-bottom: 4px;
+        margin-top: 24px;
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+    dd {
+        padding-left: 20px;
+        margin-bottom: 4px;
+    }
+}

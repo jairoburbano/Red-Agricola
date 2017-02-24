@@ -1,0 +1,119 @@
+/*------------------------------------*\
+$SECTION COLUMNA
+\*------------------------------------*/
+.section--columna {
+    @include respond-to(tablet) {
+        width: calc(100% - 232px);
+        padding-right: 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+    @include respond-to(desktop) {
+        width: calc(100% - 396px);
+        padding-right: 24px;
+    }
+    .format-quote {
+        display: flex;
+        justify-content: flex-start;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        @include respond-to(tablet) {
+            width: calc(50% - 8px);
+        }
+        &::after {
+            left: 58px;
+            @include respond-to(desktop) {
+                left: 102px;
+            }
+        }
+        .item__media {
+            width: 48px;
+            height: 48px;
+            @include respond-to(desktop) {
+                width: 92px;
+                height: 92px;
+            }
+            border-radius: 50%;
+            overflow: hidden;
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+        .item__content {
+            width: calc(100% - 48px);
+            padding-left: 10px;
+            @include respond-to(desktop) {
+                width: calc(100% - 92px);
+            }
+        }
+        .item__title {
+            margin-bottom: 10px;
+        }
+    }
+    .item--single--quote {
+        align-items: center;
+        @include respond-to(tablet) {
+            width: 100%;
+        }
+        .item__content {
+            @include respond-to(desktop) {
+                width: calc(100% - 64px);
+            }
+        }
+        .item__media {
+            margin-bottom: 0;
+            @include respond-to(desktop) {
+                width: 64px;
+                height: 64px;
+            }
+        }
+        .item__by {
+            margin-bottom: 15px;
+            @include respond-to(desktop) {
+                @include font-size(15px, 18px);
+            }
+        }
+        &::after {
+            bottom: 28px;
+            width: 60px;
+            @include respond-to(desktop) {
+                left: 74px;
+                width: 60px;
+            }
+        }
+    }
+}
+.format-quote {
+    &::after {
+        background: $columna;
+    }
+    .item__meta {
+        span {
+            color: $columna;
+        }
+        a {
+            .no-touch & {
+                &:hover {
+                    color: $columna;
+                }
+            }
+        }
+    }
+    .item__media {
+        .no-touch & {
+            background: $columna;
+        }
+    }
+    .item__title {
+        a {
+            .no-touch & {
+                &:hover {
+                    color: $columna;
+                }
+            }
+        }
+    }
+}

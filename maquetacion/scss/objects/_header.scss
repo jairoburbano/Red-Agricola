@@ -1,0 +1,105 @@
+/*------------------------------------*\
+$HEADER
+\*------------------------------------*/
+.header {
+    margin-bottom: 30px;
+    @include respond-to(tablet) {
+        height: 136px;
+        position: relative;
+    }
+    @include respond-to(desktop) {
+        margin-bottom: 40px;
+    }
+    .wrap {
+        padding: 0;
+        @include respond-to(tablet) {
+            padding: 0 20px;
+        }
+    }
+}
+.header__top {
+    background: $principal;
+    .wrap {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-flow: row wrap;
+        position: relative;
+        @include respond-to(tablet) {
+            height: 100%;
+        }
+    }
+    @include respond-to(tablet) {
+        height: 100px;
+    }
+}
+.header__logo {
+    position: absolute;
+    width: calc(100% - 48px);
+    height: 48px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 15px;
+    top: 0;
+    left: 48px;
+    @include respond-to(tablet) {
+        width: 320px;
+        height: 60px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        top: 24px;
+    }
+    svg {
+        width: 160px;
+        height: 30px;
+        @include respond-to(tablet) {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.header__bottom {
+    height: 32px;
+    width: 100%;
+    background: black;
+    @include respond-to(tablet) {
+        position: absolute;
+        bottom: 0;
+        height: 36px;
+        left: 0;
+        z-index: $level3;
+    }
+    .wrap {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-flow: row wrap;
+        overflow: hidden;
+        @include respond-to(tablet) {
+            overflow: visible;
+        }
+    }
+}
+.logo--color {
+    fill: $main;
+    .page-format-video & {
+        fill: $video;
+    }
+    .page-type-evento & {
+        fill: $evento;
+    }
+    .page-template-template-papel-digital & {
+        fill: $secundario;
+    }
+    .page-format-columna & {
+        fill: $columna;
+    }
+    .page-type-brand & {
+        fill: $brand;
+    }
+    .page-type-premium & {
+        fill: $secundario;
+    }
+}

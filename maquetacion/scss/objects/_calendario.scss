@@ -1,0 +1,91 @@
+/*------------------------------------*\
+$CALENDARIO
+\*------------------------------------*/
+select {
+    appearance: none;
+}
+.calendario {
+    width: 280px;
+}
+.calendario__select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+}
+.calendario__slect__item {
+    height: 32px;
+    background: $lightgray;
+    position: relative;
+    svg {
+        width: 12px;
+        height: 8px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translate(0, -50%);
+        z-index: $level1;
+        fil: $principal;
+    }
+    select {
+        @extend .roboto;
+        text-transform: uppercase;
+        font-weight: 700;
+        @include font-size(14px, 32px);
+        padding: 0 10px;
+        min-height: 100%;
+        width: 100%;
+        position: relative;
+        z-index: $level2;
+        height: 32px;
+    }
+}
+.calendario__select--big {
+    width: calc(65% - 6px);
+}
+.calendario__select--small {
+    width: 35%;
+}
+.calendario--days {
+
+}
+.calendario--days__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: row wrap;
+    @include font-size(12px, 25px);
+    @extend .roboto;
+    border-bottom: 1px solid $lightgray;
+}
+.calendario--days--top {
+    margin-top: 10px;
+    p {
+        width: (100% / 7);
+        text-transform: uppercase;
+        font-weight: 300;
+        text-align: center;
+    }
+}
+.calendario--days--bottom {
+    margin-bottom: 24px;
+    p, a {
+        width: (100% / 7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        height: 40px;
+        font-weight: 700;
+    }
+    a {
+        background: $lightgray;
+        color: $evento;
+        .no-touch & {
+            &:hover {
+                background: $evento;
+                color: white;
+            }
+        }
+    }
+}

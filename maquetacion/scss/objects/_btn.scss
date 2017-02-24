@@ -1,0 +1,198 @@
+/*------------------------------------*\
+$BTN
+\*------------------------------------*/
+.btn {
+    cursor: pointer;
+    display: block;
+    .no-touch & {
+        transition: all $time;
+    }
+}
+.btn--suscripcion {
+    @include font-size(14px, 32px);
+    @extend .roboto;
+    font-weight: 700;
+    color: white;
+    background: $secundario;
+    text-align: center;
+    height: 32px;
+    width: 100px;
+    position: relative;
+    z-index: $level5;
+    text-transform: uppercase;
+    padding: 0;
+    @include respond-to(tablet) {
+        margin-top: 2px;
+    }
+    .no-touch & {
+        &:hover {
+            background: $principal;
+        }
+    }
+}
+.btn--fill {
+    @include font-size(16px, 48px);
+    height: 48px;
+    width: 280px;
+    margin: auto;
+    color: $principal;
+    background: $secundario;
+    @extend .roboto;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0;
+    @include respond-to(tablet) {
+        color: white;
+    }
+    .no-touch & {
+        &:hover {
+            background: $principal;
+        }
+    }
+}
+.btn--send, .btn--brand {
+    width: 120px;
+    height: 35px;
+    background: $main;
+    text-transform: uppercase;
+    @extend .roboto;
+    font-weight: 700;
+    @include font-size(16px, 35px);
+    text-align: center;
+    color: white;
+    display: block;
+    padding: 0;
+    .no-touch & {
+        &:hover {
+            color: white;
+            background: $principal;
+        }
+    }
+}
+.btn--brand {
+    width: 160px;
+    background: #000;
+    background: $brand;
+    margin: auto;
+}
+.btn--cambio, .btn--webpay {
+    width: 100%;
+    text-align: center;
+    height: 48px;
+    background: $principal;
+    color: white;
+    text-transform: uppercase;
+    @include font-size(19px, 48px);
+    @extend .roboto;
+    font-weight: 700;
+    padding: 0;
+    border: 0;
+    margin-bottom: 30px;
+    .no-touch & {
+        &:hover {
+            background: $secundario;
+        }
+    }
+}
+.btn--save {
+    width: 65%;
+    background: $main;
+    color: white;
+    @extend .roboto;
+    font-weight: 700;
+    @include font-size(16px, 36px);
+    height: 36px;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    @include respond-to(tablet) {
+        width: 180px;
+        margin-bottom: 15px;
+    }
+    .no-touch & {
+        &:hover {
+            background: $principal;
+        }
+    }
+}
+.btn--cancel {
+    width: 35%;
+    background: $darkgray;
+    color: white;
+    @extend .roboto;
+    font-weight: 700;
+    @include font-size(16px, 36px);
+    height: 36px;
+    padding: 0;
+    text-align: center;
+    border: 0;
+    text-transform: uppercase;
+    @include respond-to(tablet) {
+        width: 100px;
+    }
+    .no-touch & {
+        &:hover {
+            background: $principal;
+        }
+    }
+}
+.btn--dark {
+    width: 100px;
+    background: $principal;
+    color: white;
+    @extend .roboto;
+    font-weight: 700;
+    @include font-size(14px, 32px);
+    height: 32px;
+    padding: 0;
+    text-align: center;
+    border: 0;
+    display: block;
+    margin-top: 15px;
+    text-transform: uppercase;
+    .no-touch & {
+        &:hover {
+            background: $secundario;
+        }
+    }
+    &.active {
+        transition: all $time;
+        background: $secundario;
+    }
+}
+.btn--download {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: $level2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    background: $secundario;
+    @include respond-to(tablet) {
+        width: 134px;
+    }
+    svg {
+        width: 14px;
+        height: 14px;
+        @include respond-to(tablet) {
+            margin-right: 5px;
+        }
+    }
+    span {
+        display: none;
+        @extend .roboto;
+        @include respond-to(tablet) {
+            display: block;
+            text-transform: uppercase;
+            @include font-size(14px, 22px);
+            font-weight: bold;
+            color: white;
+        }
+    }
+}

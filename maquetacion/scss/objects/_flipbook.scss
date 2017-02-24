@@ -1,0 +1,65 @@
+/*------------------------------------*\
+$FLIPBOOK
+\*------------------------------------*/
+.not--logged {
+    .lightbox--acceso {
+        display: block;
+    }
+    .close--lightbox {
+        display: none;
+    }
+}
+.single-papel-digital {
+    background: $darkgray;
+    padding-bottom: 60px;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    .share {
+        color: white;
+        border-top: 0;
+        margin-bottom: 0;
+    }
+    .header-404 .wrap {
+        @include respond-to(tablet) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: row wrap;
+        }
+    }
+    .section--title {
+        display: none;
+        @include font-size(21px, 32px);
+        color: white;
+        text-transform: none;
+        @include respond-to(tablet) {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            flex-flow: row wrap;
+        }
+        svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 5px;
+        }
+    }
+}
+.forweb {
+    width: 100vw;
+    height: 100vh;
+}
+.muestra {
+    width: 100%;
+    height: calc(100vh - 48px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}

@@ -1,0 +1,130 @@
+/*------------------------------------*\
+$PAGINADOR
+\*------------------------------------*/
+.paginador {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-flow: row wrap;
+    border-top: 1px solid $gray;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    width: 100%;
+    li, a {
+        width: 36px;
+        height: 36px;
+        display: block;
+    }
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
+        @include font-size(16px, 18px);
+        @extend .roboto;
+        color: $principal;
+        &.current {
+            background: $main;
+            color: white;
+        }
+        .no-touch & {
+            &:hover {
+                background: $main;
+                color: white;
+                svg {
+                    fill: white;
+                }
+            }
+            &.disable:hover {
+                background: transparent;
+                svg {
+                    fill: $lightgray;
+                }
+            }
+        }
+        &.disable {
+            cursor: default;
+            svg {
+                fill: $lightgray;
+            }
+        }
+    }
+    svg {
+        width: 8px;
+        height: 12px;
+        fill: $darkgray;
+        transition: all $time;
+    }
+    .page-format-video & {
+        a {
+            &.current {
+                background: $video;
+            }
+            .no-touch & {
+                &:hover {
+                    background: $video;
+                }
+            }
+        }
+    }
+    .page-format-quote & {
+        a {
+            &.current {
+                background: $columna;
+            }
+            .no-touch & {
+                &:hover {
+                    background: $columna;
+                }
+            }
+        }
+    }
+    .page-type-evento & {
+        a {
+            &.current {
+                background: $evento;
+            }
+            .no-touch & {
+                &:hover {
+                    background: $evento;
+                }
+            }
+        }
+    }
+    .page-template-template-papel-digital & {
+        a {
+            &.current {
+                background: $secundario;
+            }
+            .no-touch & {
+                &:hover {
+                    background: $secundario;
+                }
+            }
+        }
+    }
+    .page-type-brand & {
+        a {
+            &.current {
+                background: $brand;
+            }
+            .no-touch & {
+                &:hover {
+                    background: $brand;
+                }
+            }
+        }
+    }
+    .page-type-premium & {
+        a {
+            &.current {
+                background: $secundario;
+            }
+            .no-touch & {
+                &:hover {
+                    background: $secundario;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,128 @@
+/*!
+Theme Name: Red Agricola
+Version: 0.1.0
+Author: Agencia Digital Reactor
+Author URI: http://reactor.cl/
+*/
+/*------------------------------------*\
+    $TABLA DE CONTENIDO
+    Basado en la Guia de Harry Robert https://github.com/csswizardry/CSS-Guidelines
+\*------------------------------------*/
+/**
+ * SETTINGS...........Declaración de Variables SASS
+ * BITS...............Funciones y Mixins de SASS
+ * RESET..............Mezcla de reset de Boilerplate y Normalize
+ * ZINDEX.............Archivo con todos los z-index que se usan en el proyecto
+ *
+ * PLUGINS............Estilos de los Plugins usados
+ *
+ * SVG................Código de algunos SVG usados en la página
+ *
+ * GLOBAL CLASSES.....Clases que se usan en todo el sitio
+ * MAIN...............Declaraciones de alto nivel
+ * GRIDS..............Grids para la página
+ * LINKS..............Estilos de los Links
+ *
+ * HEADER.............Elementos de la cabecera
+ * LOGO...............Logo de la página web
+ * NAV................Menú
+ * FOOTER.............Footer de la página
+ *
+ * FORM...............Estilos de formulario
+ * BTN.......,........Botones de la página
+ * HERO...............Banner superior
+ * BREADCRUMBS........Navegación de breadcrumbs
+ *
+ * HELPERS............Clases de ayuda
+ * PRINT..............Estilos de impresión
+ */
+
+
+/*------------------------------------*\
+    $GENERIC
+\*------------------------------------*/
+@import "generic/settings";
+@import "generic/bits";
+@import "generic/reset";
+@import "generic/zindex";
+
+
+
+/*------------------------------------*\
+    $PLUGINS
+\*------------------------------------*/
+@import "vendor/plugins";
+
+
+
+/*------------------------------------*\
+    $SVG
+\*------------------------------------*/
+@import "base/svg";
+
+
+/*------------------------------------*\
+    $GLOBAL ELEMENTS
+\*------------------------------------*/
+@import "base/global-classes";
+@import "base/main";
+@import "base/links";
+
+
+/*------------------------------------*\
+    $PAGE STRUCTURE - GENERAL
+\*------------------------------------*/
+@import "objects/header";
+@import "objects/logo";
+@import "objects/nav";
+@import "objects/footer";
+
+
+/*------------------------------------*\
+		$COMPONENTS
+\*------------------------------------*/
+@import "objects/form";
+@import "objects/btn";
+@import "objects/hero";
+@import "objects/breadcrumbs";
+@import "objects/lang";
+@import "objects/search";
+@import "objects/item";
+@import "objects/sidebar";
+@import "objects/estructura";
+@import "objects/section-video";
+@import "objects/section-eventos";
+@import "objects/section-papel";
+@import "objects/section-columna";
+@import "objects/section-popular";
+@import "objects/paginador";
+@import "objects/single";
+@import "objects/share";
+@import "objects/columnista";
+@import "objects/calendario";
+@import "objects/accordeon";
+@import "objects/eventos";
+@import "objects/brand";
+@import "objects/premium";
+@import "objects/acceso";
+@import "objects/preguntas";
+@import "objects/papel";
+@import "objects/suscribete";
+@import "objects/resultado";
+@import "objects/cuenta";
+@import "objects/registro";
+@import "objects/contacto";
+@import "objects/error";
+@import "objects/adds";
+@import "objects/portadilla";
+@import "objects/flipbook";
+
+
+
+/*------------------------------------*\
+    $EXTRA HELP
+\*------------------------------------*/
+@import "generic/helpers";
+@import "generic/print";
+
+
